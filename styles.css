@@ -4,7 +4,8 @@
 }
 #carts{
     background-color: beige;
-    width: 200px;
+    width: 290px;
+    margin: 10px auto;
     padding: 15px;
     text-align: center;
 }
@@ -64,7 +65,7 @@ button{
     }
 
     .item h3{
-        width: 150px;
+        width: 250px;
 
     }
     img{
@@ -88,6 +89,12 @@ button{
         margin-left: 20px;
         background-color: red;
     
+    }
+    #buy{
+        width: 120px;
+        padding: 10px;
+        display: block;
+        margin: 30px auto;
     }
     
 

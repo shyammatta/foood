@@ -1,6 +1,8 @@
 let vitem = 0;
 let sitem = 0;
 let titem = 0;
+let citem = 0;
+let vgitem= 0;
 let totalcost = 0;
 
 function updateLocalStorage() {
@@ -8,6 +10,8 @@ function updateLocalStorage() {
         vitem,
         sitem,
         titem,
+        citem,
+        vgitem,
         totalcost,
     };
     localStorage.setItem('cartData', JSON.stringify(cartData));
@@ -16,10 +20,12 @@ function updateLocalStorage() {
 function loadCartFromLocalStorage() {
     const storedData = localStorage.getItem('cartData');
     if (storedData) {
-        const { vitem: v, sitem: s, titem: t, totalcost: cost } = JSON.parse(storedData);
+        const { vitem: v, sitem: s, titem: t, citem : c, vgitem : vg, totalcost: cost } = JSON.parse(storedData);
         vitem = v;
         sitem = s;
         titem = t;
+        citem = c;
+        vgitem = vg;
         totalcost = cost;
         updateCartDisplay();
     }
@@ -29,6 +35,10 @@ function updateCartDisplay() {
     document.getElementById('vadapav').textContent = vitem > 0 ? `Vadapav: 15 X ${vitem} = ${15 * vitem}` : '';
     document.getElementById('samosa').textContent = sitem > 0 ? `Samosa: 15 X ${sitem} = ${15 * sitem}` : '';
     document.getElementById('tea').textContent = titem > 0 ? `Tea: 10 X ${titem} = ${10 * titem}` : '';
+    document.getElementById('ckbiryani').textContent = citem > 0 ? `Chicken Biryani: 150 X ${citem} = ${150 * citem}` : '';
+    document.getElementById('vbiryani').textContent = vgitem > 0 ? `Veg Biryani: 120 X ${vgitem} = ${120 * vgitem}` : '';
+
+
     document.getElementById('cost').textContent = totalcost > 0 ? `Total Cost: ${totalcost} aindi` : '';
 }
 
@@ -75,6 +85,37 @@ function removtea() {
     if (titem > 0) {
         totalcost -= 10;
         titem -= 1;
+        updateCartDisplay();
+        updateLocalStorage();
+    }
+}
+
+function addckbiryani() {
+    totalcost += 150;
+    citem += 1;
+    updateCartDisplay();
+    updateLocalStorage();
+}
+
+function removckbiryani() {
+    if (citem > 0) {
+        totalcost -= 150;
+        citem -= 1;
+        updateCartDisplay();
+        updateLocalStorage();
+    }
+}
+function addvbiryani() {
+    totalcost += 120;
+    vgitem += 1;
+    updateCartDisplay();
+    updateLocalStorage();
+}
+
+function remvbiryani() {
+    if (vgitem > 0) {
+        totalcost -= 120;
+        vgitem -= 1;
         updateCartDisplay();
         updateLocalStorage();
     }

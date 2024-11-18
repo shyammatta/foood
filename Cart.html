@@ -22,10 +22,13 @@
             <h3 id="vadapav"></h3>
             <h3 id="samosa"></h3>
             <h3 id="tea"></h3>
+            <h3 id="ckbiryani"></h3>
+    <h3 id="vbiryani"></h3>
+
             <h2 id="cost"> </d>
 </div>
 
-<button onclick="buy()">Buy </button>
+<button onclick="buy()" id="buy">Buy </button>
 </div>
 
 <script>
@@ -35,7 +38,9 @@
             const { vitem, sitem, titem, totalcost } = JSON.parse(storedData);
             document.getElementById('vadapav').textContent = vitem > 0 ? `Vadapav: 15 X ${vitem} = ${15 * vitem}` : '';
             document.getElementById('samosa').textContent = sitem > 0 ? `Samosa: 15 X ${sitem} = ${15 * sitem}` : '';
-            document.getElementById('tea').textContent = titem > 0 ? `Tea: 10 X ${titem} = ${10 * titem}` : '';
+            document.getElementById('ckbiryani').textContent = citem > 0 ? `Chicken Biryani: 150 X ${citem} = ${150 * citem}` : '';
+            document.getElementById('vbiryani').textContent = vgitem > 0 ? `Veg Boryani: 120 X ${vgitem} = ${120 * vgitem}` : '';
+
             document.getElementById('cost').textContent = totalcost > 0 ? `Total Cost: ${totalcost} aindi` : '';
         }
     });
