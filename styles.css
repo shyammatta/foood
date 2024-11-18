@@ -34,7 +34,11 @@ button{
 
 }
 
-@media screen  and (width<660px){
+@media screen  and (width<420px){
+    body{
+        margin: 0;
+        padding: 0;
+    }
     #container{
         display: block;
         width: fit-content;
