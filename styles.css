@@ -34,7 +34,7 @@ button{
 
 }
 
-@media screen  and (width<560px){
+@media screen  and (width<660px){
     #container{
         display: block;
         width: fit-content;
