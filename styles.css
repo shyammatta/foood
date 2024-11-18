@@ -44,7 +44,7 @@ button{
     #container{
         width: fit-content;
         display: block;
-        padding: 20px;
+        padding: 10px;
         
     }
     #ff{
@@ -63,6 +63,13 @@ button{
         font-size: 30px;
     
     }
+    .item{
+        padding: 15px;
+        background-color: rgba(28, 12, 27, 0.101);
+        border-radius: 10px;
+
+
+    }
 
     .item h3{
         width: 250px;
@@ -71,6 +78,7 @@ button{
     img{
         width: 300px;
         height:200px;
+        border-radius: 10px;
     }
 
     
