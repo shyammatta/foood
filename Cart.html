@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./Home.html">
+    <script src="./script.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="./Home.html">Home</a>
+        <a href="./Cart.html">Cart</a>
+
+    </nav>
+    
+<br>
+<div id="carts">
+            <h1>cart items</h1>
+            <h3 id="vadapav"></h3>
+            <h3 id="samosa"></h3>
+            <h3 id="tea"></h3>
+            <h2 id="cost"> </d>
+</div>
+
+<button onclick="buy()">Buy </button>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const storedData = localStorage.getItem('cartData');
+        if (storedData) {
+            const { vitem, sitem, titem, totalcost } = JSON.parse(storedData);
+            document.getElementById('vadapav').textContent = vitem > 0 ? `Vadapav: 15 X ${vitem} = ${15 * vitem}` : '';
+            document.getElementById('samosa').textContent = sitem > 0 ? `Samosa: 15 X ${sitem} = ${15 * sitem}` : '';
+            document.getElementById('tea').textContent = titem > 0 ? `Tea: 10 X ${titem} = ${10 * titem}` : '';
+            document.getElementById('cost').textContent = totalcost > 0 ? `Total Cost: ${totalcost} aindi` : '';
+        }
+    });
+</script>
+
+
+
+
+    
+</body>
+</html>
